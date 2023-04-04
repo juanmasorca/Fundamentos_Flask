@@ -1,0 +1,18 @@
+<!-- Heriencia de una plantilla base-->
+{% extends './layout.html' %}
+
+{% block title %}
+{{ data.title }}
+{% endblock %}
+{% block body %}
+<h1>{{ data.bienvenida }}</h1>
+{% if data.numero_de_cursos > data.total %}
+<ul>
+    {% for c in data.cursos %}
+    <li>{{ c }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<h2>Hay mas de {{ data.total }} registros</h2>
+{% endif %}
+{% endblock %}
